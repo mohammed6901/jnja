@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Milion</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="game.png" rel="icon">
+</head>
+<body>
+    <audio id="background-audio" src="background.wav"></audio>
+    <audio id="correct-answer-sound" src="jungle.wav"></audio>
+    <audio id="lose-sound"><source src="lose.wav" type="audio/wav"></audio>
+    <audio id="r_answer" src="r_button.wav"></audio>
+    <audio id="up-level-sound" src="up.wav"></audio>
+    <audio id="fifty-sound" src="fifty.wav"></audio>
+    <audio id="phone-sound" src="phone.wav"></audio>
+    <audio id="call-sound" src="call.wav"></audio>
+    <audio id="guess-sound" src="guess.wav"></audio>
+    <audio id="waiting-audio" src="waiting.wav"></audio>
+
+
+
+    <div class="header">
+        <img src="static/icons/logo.png" alt="Logo" class="logo">
+    </div>
+
+
+    <!-- Financial Rewards container -->
+    <div class="rewards-container" id="rewards-container">
+        <ul id="rewards-list">
+            <!-- The rewards will be populated here dynamically using JavaScript -->
+        </ul>
+    </div>
+
+    <div class="game-container">
+        <!-- Question container -->
+        <div class="question-container" id="question-container">
+            <div class="welcome-message-container" id="welcome-message-container">
+                <p class="hi">Welcome to the adventure! Press the button and start the magical journey.</p>
+                <p class="hi">Let's Go! 🕹️</p>
+                <button id="start-btn" class="start-button">Start Game</button>
+            </div>
+            <div class="question"></div>
+            <div class="answers-container"></div>
+        </div>
+
+        <!-- Circle buttons -->
+        <div class="circle-buttons-container" id="circle-buttons-container" style="display: none;">
+            <button id="50-50-button" class="circle-button">50:50 ➗</button>
+            <button id="call-friend-button" class="circle-button">Call Friend ☎️</button>
+        </div>
+    </div>
+
+    <div class="hint-container" id="hint-container">
+        <p id="hint-text"></p>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

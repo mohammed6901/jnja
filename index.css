@@ -1,0 +1,269 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #212529;
+    color: #fff;
+    text-align: center;
+}
+
+.header {
+    background-color: #333;
+    padding: 0px 0;
+}
+
+.logo {
+    width: 150px; /* Set the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add space between logo and other content */
+    justify-content: space-between;
+
+}
+
+.game-container {
+    position: relative;
+}
+
+.question-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 1.0s ease; /* Add a transition effect for opacity */
+}
+
+.question {
+    font-size: 1.5rem; /* Maintain the font size */
+    margin-bottom: 2rem; /* Maintain the increased spacing below the question */
+    font-family: Arial, sans-serif; /* Maintain the font family */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Adjusted shadow effect */
+    font-weight: 700; /* Adjusted font weight for a wider font */
+    transition: transform 0.3s, box-shadow 0.3s; /* Added transition for transform and box-shadow */    text-decoration: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Added box shadow for depth */
+}
+
+.question:hover {
+    transform: scale(1.09); /* Scale up slightly on hover for an interactive effect */
+}
+
+.answers-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+    column-gap: 20px;
+    justify-items: center;
+    align-items: center;
+    height: 200px;
+}
+
+.answer {
+    font-size: 1.3rem; /* Example font size, adjust as needed */
+    font-weight: 3500; /* Adjusted font weight for a wider font */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    width: 290px; /* Set a fixed width for the answer buttons */
+    height: 70px; /* Set a fixed height for the answer buttons */
+    padding: 10px;
+    margin: 15px;
+    border: 2px solid #000;
+    clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+    background-color: #1E79D5;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden; /* Hide overflowed content */
+    text-overflow: ellipsis; /* Display an ellipsis (...) to indicate overflow */
+    white-space: nowrap; /* Prevent wrapping of text */
+    transition: background-color 0.3s;
+}
+
+.answer:hover {
+    background-color: #34495E;
+}
+
+.answer.selected-answer {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+    margin-top: 3rem; /* زيادة المسافة فوق الأزرار */
+}
+
+.navigation-buttons button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.navigation-buttons button:hover {
+    background-color: #0056b3;
+}
+
+
+.rewards-container {
+    position: fixed;
+    top: 60%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: #000;
+    padding: 20px;
+    border-radius: 9px;
+    border: 2px solid #34495E; /* Add border with dark gray color */
+    width: 200px;
+    z-index: 10;
+    display: none;
+}
+
+#rewards-list {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+/* CSS for rewards list */
+#rewards-list li {
+    color: white;
+    margin-bottom: 10px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.7s ease; /* Add transition for background color */
+}
+
+#rewards-list li .number {
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 35px;
+    font-family: Arial, sans-serif; /* Change font family of the numbers */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow */
+}
+
+.number.reward-number-5 {
+    color: gold; /* Change color for the first reward number */
+}
+
+.number.reward-number-10 {
+    color: gold; /* Change color for the second reward number */
+}
+
+.number.reward-number-15 {
+    color: gold; /* Change color for the second reward number */
+}
+
+/* Highlight current question */
+.current-question {
+    background-color: #F09304; /* Change highlight color to orange */
+    border-radius: 10%; /* Adjust border radius to make it circular */
+}
+
+.welcome-message-container {
+    display: block; /* Initially display the welcome message container */
+    margin-bottom: 20px; /* Add some space below the welcome message */
+}
+
+.hi {
+    font-family: "Pacifico", cursive; /* Choose a good font that matches the meaning */
+    font-size: 24px; /* Adjust font size as needed */
+    letter-spacing: 3px; /* Add wide spacing between letters */
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #4bd763, 0 0 70px #4bd763, 0 0 80px #4bd763, 0 0 100px #4bd763, 0 0 150px #4bd763; /* Add a shining effect */
+}
+
+.start-button {
+    display: inline-block;
+    padding: 70px 58px;
+    border-radius: 50%;
+    border: 3px solid #256701; /* Hide the border initially */
+    background: #19361e;
+    box-shadow: 0 0 0 3px #19361e;
+    color: #4bd763;
+    font-size: 1.5em;
+    margin: 50px auto 30px auto; /* Updated margin */
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Add transitions for smooth animation */
+}
+
+.start-button:hover {
+    transform: translateY(-5px) scale(1.05); /* Add a slight upward movement and scale effect on hover */
+    box-shadow: 0 8px 20px rgba(87,25,251, 0.4); /* Increase the shadow size on hover */
+}
+
+.start-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #4bd763 20%, transparent 20%);
+    background-size: 300% 300%;
+    transition: background-position 0.3s; /* Add transition for smooth animation */
+}
+
+.start-button:hover::before {
+    background-position: -50% -50%; /* Move the gradient to create a flowing effect on hover */
+}
+
+.start-button span {
+    position: relative;
+    z-index: 1;
+}
+
+.circle-buttons-container {
+    position: absolute;
+    bottom: -50px; /* Adjust as needed */
+    display: none;
+    margin-top: 20px; /* Add margin to create space */
+    top: calc(100% + 20px); /* Position the circle buttons below the question container */
+    left: 50%; /* Align the circle buttons to the center */
+    transform: translateX(-50%); /* Center the circle buttons horizontally */
+}
+
+.circle-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #FFD700; /* Blue border color */
+    background-color: transparent; /* Transparent background */
+    margin: 10px; /* Add margin to create space */
+    cursor: pointer;
+    color: #fff;
+}
+
+.circle-button:hover {
+    background-color: #541976; /* Darker color on hover */
+}
+
+.circle-button.disabled:hover {
+    background-color: transparent; /* No hover effect when disabled */
+    cursor: default; /* Default cursor when disabled */
+}
+
+.circle-button.clicked {
+    font-size: 30px; /* Increase font size when button is clicked */
+    border: 2px solid transparent; /* Blue border color */
+}
+
+.hint-container {
+    position: absolute;
+    top: 460px; /* Adjust this value according to your layout */
+    left: 60%; /* Position in the center horizontally */
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    background-color: rgba(58,9,87, 0.9); /* Semi-transparent white background */
+    border: 2px solid gold; /* Gold border */
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    display: none; /* Initially hidden */
+    z-index: 999; /* Ensure it's above other elements */
+}
